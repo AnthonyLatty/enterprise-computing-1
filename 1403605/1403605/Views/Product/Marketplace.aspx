@@ -26,6 +26,25 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Available Products</h1>
+                    <div class="form-group">
+                        <label class="col-md-3 text-left lead">Choose a category:</label>
+                        <div class="col-sm-4">
+                            <asp:DropDownList ID="ddlProduct" runat="server"
+                                              ItemType="_1403605.Models.Category"
+                                              SelectMethod="GetAllCategory"
+                                              AutoPostBack="true" 
+                                              DataValueField="CategoryId" DataTextField="Name"
+                                              CssClass="form-control">
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
 </body>
 </html>
