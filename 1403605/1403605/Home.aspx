@@ -16,7 +16,7 @@
         <div class="jumbotron">
             <div class="row">
                 <div class="col-md-8">
-                    <h3 class="display-4"><strong id="strong-color">Watts New Superstore</strong></h3>
+                    <h3 class="display-4"><strong id="strong-color">What's New Superstore</strong></h3>
                     <p class="lead">An online store for customers to buy electronics.</p>
                 </div>
                 <div class="col-md-2">
