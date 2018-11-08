@@ -9,8 +9,8 @@
           <Key>
             <PropertyRef Name="CategoryId" />
           </Key>
-          <Property Name="CategoryId" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="CategoryId" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -19,10 +19,10 @@
           <Property Name="ProductId" Type="int" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="Description" Type="varchar" MaxLength="50" />
-          <Property Name="CategoryId" Type="int" />
+          <Property Name="CategoryId" Type="varchar" MaxLength="30" />
           <Property Name="UnitPrice" Type="money" />
         </EntityType>
-        <Association Name="FK__Product__Categor__17F790F9">
+        <Association Name="FK__Product__Categor__47A6A41B">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -37,7 +37,7 @@
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Product__Categor__17F790F9" Association="Self.FK__Product__Categor__17F790F9">
+          <AssociationSet Name="FK__Product__Categor__47A6A41B" Association="Self.FK__Product__Categor__47A6A41B">
             <End Role="Category" EntitySet="Category" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
@@ -51,9 +51,9 @@
           <Key>
             <PropertyRef Name="CategoryId" />
           </Key>
-          <Property Name="CategoryId" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Products" Relationship="Self.FK__Product__Categor__17F790F9" FromRole="Category" ToRole="Product" />
+          <Property Name="CategoryId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Products" Relationship="Self.FK__Product__Categor__47A6A41B" FromRole="Category" ToRole="Product" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -62,11 +62,11 @@
           <Property Name="ProductId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="CategoryId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="Category" Relationship="Self.FK__Product__Categor__17F790F9" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="Category" Relationship="Self.FK__Product__Categor__47A6A41B" FromRole="Product" ToRole="Category" />
         </EntityType>
-        <Association Name="FK__Product__Categor__17F790F9">
+        <Association Name="FK__Product__Categor__47A6A41B">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -81,7 +81,7 @@
         <EntityContainer Name="ProductEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Products" EntityType="Self.Product" />
-          <AssociationSet Name="FK__Product__Categor__17F790F9" Association="Self.FK__Product__Categor__17F790F9">
+          <AssociationSet Name="FK__Product__Categor__47A6A41B" Association="Self.FK__Product__Categor__47A6A41B">
             <End Role="Category" EntitySet="Categories" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>

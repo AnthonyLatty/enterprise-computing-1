@@ -20,7 +20,7 @@ namespace _1403605.Models
             this.Products = new HashSet<Product>();
         }
     
-        public int CategoryId { get; set; }
+        public string CategoryId { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

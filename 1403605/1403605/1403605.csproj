@@ -190,6 +190,7 @@
     <Compile Include="Models\Product.cs">
       <DependentUpon>ProductWithCategory.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductDb.cs" />
     <Compile Include="Models\ProductWithCategory.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

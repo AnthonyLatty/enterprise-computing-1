@@ -17,7 +17,7 @@ namespace _1403605.Models
         public int ProductId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public Nullable<int> CategoryId { get; set; }
+        public string CategoryId { get; set; }
         public Nullable<decimal> UnitPrice { get; set; }
     
         public virtual Category Category { get; set; }
