@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _1403605.Views.Account {
+namespace _1403605.Views.Membership.Free {
     
     
-    public partial class Login {
+    public partial class Register {
         
         /// <summary>
         /// form1 control.
@@ -22,6 +22,15 @@ namespace _1403605.Views.Account {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// lblResult control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResult;
+        
+        /// <summary>
         /// lblError control.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,13 @@ namespace _1403605.Views.Account {
         protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// MembershipTypeDropDownList control.
+        /// txtUserId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList MembershipTypeDropDownList;
+        protected global::System.Web.UI.WebControls.TextBox txtUserId;
         
         /// <summary>
         /// txtUserName control.
@@ -76,12 +85,21 @@ namespace _1403605.Views.Account {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordRequiredFieldValidator;
         
         /// <summary>
-        /// btnLoginCustomer control.
+        /// ddlMembershipType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLoginCustomer;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMembershipType;
+        
+        /// <summary>
+        /// btnSaveFreeCustomer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSaveFreeCustomer;
     }
 }

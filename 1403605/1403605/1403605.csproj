@@ -104,6 +104,8 @@
     <Content Include="Content\Main.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Home.aspx" />
+    <Content Include="Images\black_friday_banner.jpg" />
+    <Content Include="Images\home_banner.png" />
     <Content Include="Models\ProductWithCategory.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ProductWithCategory.edmx</DependentUpon>
@@ -163,8 +165,11 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Views\Account\Login.aspx" />
     <Content Include="Views\Account\Register.aspx" />
-    <Content Include="Views\Product\Marketplace.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Views\Membership\Free\Register.aspx" />
+    <Content Include="Views\Membership\Free\Marketplace.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -190,7 +195,6 @@
     <Compile Include="Models\Product.cs">
       <DependentUpon>ProductWithCategory.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProductDb.cs" />
     <Compile Include="Models\ProductWithCategory.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -221,11 +225,18 @@
     <Compile Include="Views\Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Product\Marketplace.aspx.cs">
+    <Compile Include="Views\Membership\Free\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Membership\Free\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Membership\Free\Marketplace.aspx.cs">
       <DependentUpon>Marketplace.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Product\Marketplace.aspx.designer.cs">
+    <Compile Include="Views\Membership\Free\Marketplace.aspx.designer.cs">
       <DependentUpon>Marketplace.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

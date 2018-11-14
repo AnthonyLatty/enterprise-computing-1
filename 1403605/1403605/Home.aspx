@@ -12,21 +12,29 @@
     <script src="Scripts/bootstrap.min.js"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div class="jumbotron">
-            <div class="row">
-                <div class="col-md-8">
-                    <h3 class="display-4"><strong id="strong-color">What's New Superstore</strong></h3>
-                    <p class="lead">An online store for customers to buy electronics.</p>
-                </div>
-                <div class="col-md-2">
-                    <asp:Button ID="btnRegister" runat="server" CssClass="btn btn-secondary btn-lg btn-block" Text="Register" OnClick="btnRegister_OnClick" />
-                </div>
-                <div class="col-md-2">
-                    <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-success btn-lg btn-block" Text="Login" OnClick="btnLogin_OnClick" />
-                </div>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" id="banner" href="Home.aspx">What's New Superstore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Home.aspx">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Views/Account/Register.aspx">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Views/Account/Login.aspx">Login</a>
+                </li>
+            </ul>
         </div>
+    </nav>
+    <div class="jumbotron"></div>
+    <form id="form1" runat="server">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">

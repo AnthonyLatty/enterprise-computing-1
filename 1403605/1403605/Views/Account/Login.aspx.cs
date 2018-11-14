@@ -30,39 +30,54 @@ namespace _1403605.Views.Account
         {
             if (IsValid)
             {
-                SqlConnection sqlConnection = new SqlConnection(GetConnectionString());
+                var memberShipType = MembershipTypeDropDownList.SelectedItem.Text;
 
-                sqlConnection.Open();
 
-                _sqlSyntax = "Select * from Customer";
-
-                _sqlCommand = new SqlCommand(_sqlSyntax);
-
-                _sqlDataAdapter = new SqlDataAdapter(_sqlCommand.CommandText, sqlConnection);
-
-                _dataTable = new DataTable();
-
-                _sqlDataAdapter.Fill(_dataTable);
-
-                _rowCount = _dataTable.Rows.Count;
-
-                for (int i = 0; i < _rowCount; i++)
+                if (memberShipType == "Free")
                 {
-                    _userName = _dataTable.Rows[i]["UserName"].ToString();
+                    SqlConnection sqlConnection = new SqlConnection(GetConnectionString());
 
-                    _password = _dataTable.Rows[i]["Password"].ToString();
+                    sqlConnection.Open();
 
-                    if (_userName == txtUserName.Text && _password == Crypto.SHA256(txtPassword.Text))
+                    _sqlSyntax = "Select * from Customer";
+
+                    _sqlCommand = new SqlCommand(_sqlSyntax);
+
+                    _sqlDataAdapter = new SqlDataAdapter(_sqlCommand.CommandText, sqlConnection);
+
+                    _dataTable = new DataTable();
+
+                    _sqlDataAdapter.Fill(_dataTable);
+
+                    _rowCount = _dataTable.Rows.Count;
+
+                    for (int i = 0; i < _rowCount; i++)
                     {
-                        Session["UserName"] = _userName;
-                        Response.Redirect("~/Views/Product/Marketplace.aspx");
-                        ClearControls();
+                        _userName = _dataTable.Rows[i]["UserName"].ToString();
+
+                        _password = _dataTable.Rows[i]["Password"].ToString();
+
+                        if (_userName == txtUserName.Text && _password == Crypto.SHA256(txtPassword.Text))
+                        {
+                            Session["UserName"] = _userName;
+                            Response.Redirect("~/Views/Membership/Free/Marketplace.aspx");
+                            ClearControls();
+                        }
+                        else
+                        {
+                            lblError.Text = "Invalid User Name or Password! Please try again!";
+                            ClearControls();
+                        }
                     }
-                    else
-                    {
-                        lblError.Text = "Invalid User Name or Password! Please try again!";
-                        ClearControls();
-                    }
+                }
+                else if (memberShipType == "Premium")
+                {
+                    
+                }
+                else
+                {
+                    lblError.Text = "Invalid User Name or Password! Please try again!";
+                    ClearControls();
                 }
             }
         }

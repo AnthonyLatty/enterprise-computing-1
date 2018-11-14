@@ -5,30 +5,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>MarketPlace</title>
-    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="../../Content/Main.css" rel="stylesheet" />
-    <script src="../../Scripts/jquery-3.3.1.js"></script>
-    <script src="../../Scripts/bootstrap.min.js"></script>
+    <link href="../../../Content/Main.css" rel="stylesheet" />
+    <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../../Scripts/jquery-3.3.1.min.js"></script>
+    <link href="../../../Content/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" id="banner" href="#">What's New Superstore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="../../../Home.aspx">Logout</a>
+            </li>
+        </ul>
+    </nav>
     <form id="form1" runat="server">
-        <div class="jumbotron">
-            <div class="row">
-                <div class="col-md-10">
-                    <h1 id="banner">Welcome to our Market Place.</h1>
-                    <p class="lead">Choose from a wide range of products at your finger tips.</p>
-                    <p class="lead">
-                        <asp:Label ID="lblError" CssClass="text-danger" Font-Bold="True" runat="server" Text=""/>
-                    </p>
-                </div>
-                <div class="col-md-2">
-                    <asp:Button ID="btnLogout" runat="server" CssClass="btn btn-danger btn-lg btn-block" Text="Logout" OnClick="btnLogout_OnClick"/>
-                </div>
-            </div>
-        </div>
+        <div class="jumbotron"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <br />
+                    <p class="lead">
+                        <asp:Label ID="lblError" CssClass="text-danger" Font-Bold="True" runat="server" Text=""/>
+                    </p>
                     <h1>Available Products</h1>
                     <div class="form-group">
                         <label class="col-md-3 text-left lead">Choose a category:</label>
