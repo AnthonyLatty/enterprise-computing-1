@@ -44,13 +44,6 @@
                                                SelectCommand="SELECT * FROM [Product] 
                                                               ORDER BY [Name]">
                             </asp:SqlDataSource>
-                            <%--<asp:DropDownList ID="ddlProduct" runat="server"
-                                              ItemType="_1403605.Models.Category"
-                                              SelectMethod="GetAllCategory"
-                                              AutoPostBack="true"
-                                              DataValueField="CategoryId" DataTextField="Name"
-                                              CssClass="form-control">
-                            </asp:DropDownList>--%>
                         </div>
                     </div>
                 </div>
@@ -72,33 +65,6 @@
             </div>
             <br />
             <br />
-            <%--<div class="row">
-                <div class="col-md-12">
-                    <asp:GridView ID="grdProducts" runat="server" 
-                        AutoGenerateColumns="false" DataKeyNames="ProductId"
-                        CssClass="table table-bordered table-hover" 
-                        AllowSorting="true" PageSize="5" 
-                        ItemType="_1403605.Models.Product" 
-                        SelectMethod="grdProducts_GetData">
-                        <Columns>
-                            <asp:BoundField DataField="ProductId" HeaderText="Product ID">
-                                <ItemStyle CssClass="col-xs-2" />
-                            </asp:BoundField>
-                            <asp:BoundField DataField="Name" HeaderText="Product Name" 
-                                SortExpression="Name">
-                                <ItemStyle CssClass="col-xs-2" />
-                            </asp:BoundField>
-                            <asp:BoundField DataField="Description" HeaderText="Description">
-                                <ItemStyle CssClass="col-xs-2" />
-                            </asp:BoundField>
-                            <asp:BoundField DataField="UnitPrice" HeaderText="Unit Price" DataFormatString="{0:C}">
-                                <ItemStyle CssClass="col-xs-2 text-right" />
-                                <HeaderStyle CssClass="text-right" />
-                            </asp:BoundField>
-                        </Columns>
-                    </asp:GridView>
-                </div>
-            </div>--%>
         </div>
     </form>
 </body>

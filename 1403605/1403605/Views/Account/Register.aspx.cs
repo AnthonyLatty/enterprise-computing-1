@@ -15,5 +15,10 @@ namespace _1403605.Views.Account
         {
             Response.Redirect("~/Views/Membership/Free/Register.aspx");
         }
+
+        protected void btnPremiumMembership_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Membership/Premium/Register.aspx");
+        }
     }
 }

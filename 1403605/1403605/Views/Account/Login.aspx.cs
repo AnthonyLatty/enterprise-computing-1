@@ -35,21 +35,7 @@ namespace _1403605.Views.Account
 
                 if (memberShipType == "Free")
                 {
-                    SqlConnection sqlConnection = new SqlConnection(GetConnectionString());
-
-                    sqlConnection.Open();
-
-                    _sqlSyntax = "Select * from Customer";
-
-                    _sqlCommand = new SqlCommand(_sqlSyntax);
-
-                    _sqlDataAdapter = new SqlDataAdapter(_sqlCommand.CommandText, sqlConnection);
-
-                    _dataTable = new DataTable();
-
-                    _sqlDataAdapter.Fill(_dataTable);
-
-                    _rowCount = _dataTable.Rows.Count;
+                    DatabaseConnectivity();
 
                     for (int i = 0; i < _rowCount; i++)
                     {
@@ -72,7 +58,26 @@ namespace _1403605.Views.Account
                 }
                 else if (memberShipType == "Premium")
                 {
-                    
+                    DatabaseConnectivity();
+
+                    for (int i = 0; i < _rowCount; i++)
+                    {
+                        _userName = _dataTable.Rows[i]["UserName"].ToString();
+
+                        _password = _dataTable.Rows[i]["Password"].ToString();
+
+                        if (_userName == txtUserName.Text && _password == Crypto.SHA256(txtPassword.Text))
+                        {
+                            Session["UserName"] = _userName;
+                            Response.Redirect("~/Views/Membership/Premium/Dashboard.aspx");
+                            ClearControls();
+                        }
+                        else
+                        {
+                            lblError.Text = "Invalid User Name or Password! Please try again!";
+                            ClearControls();
+                        }
+                    }
                 }
                 else
                 {
@@ -80,6 +85,26 @@ namespace _1403605.Views.Account
                     ClearControls();
                 }
             }
+        }
+
+        // Responsible for connecting to DB and running SQL
+        private void DatabaseConnectivity()
+        {
+            SqlConnection sqlConnection = new SqlConnection(GetConnectionString());
+
+            sqlConnection.Open();
+
+            _sqlSyntax = "Select * from Customer";
+
+            _sqlCommand = new SqlCommand(_sqlSyntax);
+
+            _sqlDataAdapter = new SqlDataAdapter(_sqlCommand.CommandText, sqlConnection);
+
+            _dataTable = new DataTable();
+
+            _sqlDataAdapter.Fill(_dataTable);
+
+            _rowCount = _dataTable.Rows.Count;
         }
 
         private void ClearControls()

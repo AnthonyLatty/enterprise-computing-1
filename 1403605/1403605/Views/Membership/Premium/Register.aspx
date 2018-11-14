@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="_1403605.Views.Membership.Free.Register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="_1403605.Views.Membership.Premium.Register" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Free Membership</title>
+    <title>Premium Membership</title>
     <link href="../../../Content/Main.css" rel="stylesheet" />
     <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
     <script src="../../../Scripts/jquery-3.3.1.min.js"></script>
@@ -70,13 +70,13 @@
                                       CssClass="form-control"
                                       Visible="False"
                                       AppendDataBoundItems="true">  
-                        <asp:ListItem Selected="True" Value="1">Free</asp:ListItem>  
+                        <asp:ListItem Selected="True" Value="1">Premium</asp:ListItem>  
                     </asp:DropDownList>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-6 col-md-4">
-                    <asp:Button ID="btnSaveFreeCustomer" runat="server" Text="Register" class="btn btn-secondary" OnClick="btnSaveFreeCustomer_OnClick"/>
+                    <asp:Button ID="btnSavePremiumCustomer" runat="server" Text="Register" class="btn btn-success" OnClick="btnSavePremiumCustomer_OnClick" />
                 </div>
             </div>
         </div>

@@ -43,7 +43,7 @@
                          <img class="card-img-top" src="../../Images/free_membership.jpg" alt="Card image cap"/>
                          <div class="card-body">
                              <h3 class="card-title">Free Membership</h3>
-                             <p class="card-text">Sign up to be a free member.Get access to our online store for free, no credit card needed.</p>
+                             <p class="card-text">Sign up to be a free member.Get access to our online store for free, no credit card needed. <strong>Only one item can be purchase at a time.</strong></p>
                              <asp:Button ID="btnFreeMembership" runat="server" Text="Sign up" CssClass="btn btn-secondary" OnClick="btnFreeMembership_OnClick" />
                          </div>
                      </div>
@@ -54,7 +54,7 @@
                          <div class="card-body">
                              <h3 class="card-title">Premium Membership</h3>
                              <p class="card-text">Get access to our online store with additional features for our premium members.</p>
-                             <asp:Button ID="btnPremiumMembership" runat="server" Text="Sign up" CssClass="btn btn-primary" />
+                             <asp:Button ID="btnPremiumMembership" runat="server" Text="Sign up" CssClass="btn btn-primary" OnClick="btnPremiumMembership_OnClick" />
                          </div>
                      </div>
                  </div>
