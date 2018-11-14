@@ -106,6 +106,7 @@
     <Content Include="Home.aspx" />
     <Content Include="Images\black_friday_banner.jpg" />
     <Content Include="Images\home_banner.png" />
+    <Content Include="Images\wow_deal.jpg" />
     <Content Include="Models\ProductWithCategory.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ProductWithCategory.edmx</DependentUpon>

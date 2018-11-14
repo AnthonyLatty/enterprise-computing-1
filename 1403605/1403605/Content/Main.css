@@ -4,18 +4,21 @@
 .jumbotron {
     background-image: url('../Images/home_banner.png') !important;
     height: 300px;
+    border-radius: 0;
 }
 
 .jumbotron-login {
     background-image: url('../Images/black_friday_banner.jpg') !important;
     width: 100%;
     height: 250px;
+    border-radius: 0;
 }
 
 .jumbotron-register {
     background-image: url('../Images/black_friday_banner.jpg') !important;
     width: 100%;
     height: 250px;
+    border-radius: 0;
 }
 
 #banner {
