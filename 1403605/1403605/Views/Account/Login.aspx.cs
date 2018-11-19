@@ -111,7 +111,6 @@ namespace _1403605.Views.Account
         {
             txtUserName.Text = "";
             txtPassword.Text = "";
-            MembershipTypeDropDownList.SelectedItem.Text = "";
         }
     }
 }

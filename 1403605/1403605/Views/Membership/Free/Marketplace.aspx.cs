@@ -12,7 +12,8 @@ namespace _1403605.Views.Membership.Free
         protected void Page_Load(object sender, EventArgs e)
         {
             //bind drop-down list on first load   
-            if (!IsPostBack) ddlProducts.DataBind();
+            if (!IsPostBack)
+                ddlProducts.DataBind();
 
             //get and show product on every load
             _selectedProduct = GetSelectedProduct();

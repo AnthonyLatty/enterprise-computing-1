@@ -31,6 +31,9 @@
                     <p class="lead">
                         <asp:Label ID="lblError" CssClass="text-danger" Font-Bold="True" runat="server" Text=""/>
                     </p>
+                    <p class="lead">
+                        <asp:Label ID="lblSuccess" CssClass="text-success" Font-Bold="True" runat="server" Text=""/>
+                    </p>
                     <h1>Available Products</h1>
                     <div class="form-group">
                         <label class="col-md-3 text-left lead">Choose a Category:</label>
@@ -46,7 +49,8 @@
                     </div>
                     <div class="col-md-12">
                         <asp:GridView ID="grdProducts" runat="server" 
-                                      AutoGenerateColumns="false" DataKeyNames="ProductId"
+                                      AutoGenerateColumns="false" 
+                                      DataKeyNames="ProductId"
                                       CssClass="table table-bordered table-hover" 
                                       AllowSorting="true" PageSize="5" 
                                       ItemType="_1403605.Models.Product" 
@@ -68,32 +72,36 @@
                             </Columns>
                         </asp:GridView>
                     </div>
-                    <h1>Edit our products</h1>
+                    <h1>Edit our Products</h1>
+                    <asp:SqlDataSource ID="SqlDataSourceConnection" 
+                                       runat="server"
+                                       DataSourceMode="DataSet"
+                                       ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
+                                       SelectCommand="SELECT ProductId, Name, Description FROM Product"
+                                       UpdateCommand="UPDATE Product SET Description = @Description WHERE ProductId = @ProductId"
+                                       OnUpdated="SqlDataSourceConnection_OnUpdated">
+                    </asp:SqlDataSource> 
                     <div class="col-md-12">
-                        <asp:GridView ID="grdCategories" runat="server"
-                                  AutoGenerateColumns="False" DataKeyNames="ProductId"
-                                  DataSourceID="SqlDataSourceConnection"
-                                  AllowPaging="True"
-                                  AllowSorting="true" PageSize="8"
-                                  CssClass="table table-bordered table-hover"
-                                  OnPreRender="grdCategories_PreRender" 
-                                  OnRowDeleted="grdCategories_RowDeleted" 
-                                  OnRowUpdated="grdCategories_RowUpdated">
+                        <asp:GridView ID="grdCategories" 
+                                      runat="server"
+                                      AutoGenerateColumns="False" 
+                                      DataKeyNames="ProductId"
+                                      DataSourceID="SqlDataSourceConnection"
+                                      AllowPaging="True"
+                                      AllowSorting="true" 
+                                      PageSize="5"
+                                      CssClass="table table-bordered table-hover">
                             <Columns>
-                                <asp:BoundField DataField="ProductId" HeaderText="Product ID">
+                                <asp:BoundField DataField="ProductId" HeaderText="Category ID" ReadOnly="True">
                                     <ItemStyle CssClass="col-xs-2" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="Name" HeaderText="Product Name">
+                                <asp:BoundField DataField="Name" HeaderText="Product Name" ReadOnly="True">
                                     <ItemStyle CssClass="col-xs-2" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="Description" HeaderText="Description">
-                                    <ItemStyle CssClass="col-xs-2" />
+                                <asp:BoundField DataField="Description" HeaderText="Product Description">
                                 </asp:BoundField>
                                 <asp:CommandField CausesValidation="False" ShowEditButton="True">
                                     <ItemStyle CssClass="col-xs-2 text-danger" />
-                                </asp:CommandField>
-                                <asp:CommandField CausesValidation="False" ShowDeleteButton="True">
-                                    <ItemStyle CssClass="col-xs-2" /> 
                                 </asp:CommandField>
                             </Columns>
                         </asp:GridView>
@@ -103,41 +111,6 @@
                             of
                             <%=grdCategories.PageCount%>
                         </i>
-                        <asp:SqlDataSource ID="SqlDataSourceConnection" runat="server"
-                            ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
-                            ConflictDetection="CompareAllValues" 
-                            OldValuesParameterFormatString="original_{0}"
-                            SelectCommand="SELECT * FROM [Product]"
-                            DeleteCommand="DELETE FROM [Product]
-                                           WHERE [CategoryId] = @original_CategoryId
-                                           AND [Name] = @Original_Name
-                                           AND [Description] = @original_Description"
-                            InsertCommand="INSERT INTO [Product]
-                                           ([CategoryId], [Name], [Description]) 
-                                           VALUES (@CategoryId, @Name, @Description)" 
-                            UpdateCommand="UPDATE [Product] 
-                                           SET [Name] = @Name,
-                                           [Description] = @Description
-                                           WHERE [CategoryId] = @original_CategoryId
-                                           AND [Name] = @original_Name
-                                           AND [Description] = @original_Description">
-                            <InsertParameters>
-                                <asp:Parameter Name="CategoryId" Type="String"></asp:Parameter>
-                                <asp:Parameter Name="Name" Type="String"></asp:Parameter>
-                                <asp:Parameter Name="Description" Type="String"></asp:Parameter>
-                            </InsertParameters>
-                            <DeleteParameters>
-                                <asp:Parameter Name="original_CategoryId" Type="String"></asp:Parameter>
-                                <asp:Parameter Name="original_Name" Type="String"></asp:Parameter>
-                                <asp:Parameter Name="original_Description" Type="String"></asp:Parameter>
-                            </DeleteParameters>
-                            <UpdateParameters>
-                                <asp:Parameter Name="Name" Type="String"></asp:Parameter>
-                                <asp:Parameter Name="original_Name" Type="String"></asp:Parameter>
-                                <asp:Parameter Name="original_Description" Type="String"></asp:Parameter>
-                                <asp:Parameter Name="original_CategoryId" Type="String"></asp:Parameter>
-                            </UpdateParameters>
-                        </asp:SqlDataSource> 
                     </div>
                 </div>
             </div>
