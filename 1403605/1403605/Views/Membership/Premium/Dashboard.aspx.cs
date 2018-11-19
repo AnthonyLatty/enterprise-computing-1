@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Linq;
 using System.Web.ModelBinding;
 using System.Web.UI;
@@ -14,7 +15,9 @@ namespace _1403605.Views.Membership.Premium
         protected void Page_Load(object sender, EventArgs e)
         {
 
+           
         }
+
 
         public IQueryable<Category> GetAllCategory()
         {
@@ -41,6 +44,11 @@ namespace _1403605.Views.Membership.Premium
         protected void SqlDataSourceConnection_OnUpdated(object sender, SqlDataSourceStatusEventArgs e)
         {
             lblSuccess.Text = e.AffectedRows > 0 ? "Row Updated Successfully" : "No data updated!";
+        }
+
+        protected void btnCheckOut_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("https://www.paypal.com/jm/home");
         }
     }
 }

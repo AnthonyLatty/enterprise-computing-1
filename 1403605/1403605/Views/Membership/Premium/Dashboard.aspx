@@ -112,6 +112,60 @@
                             <%=grdCategories.PageCount%>
                         </i>
                     </div>
+                    <br />
+                    <br />
+                    <h1>Showcase products</h1>
+                    <asp:SqlDataSource ID="ProductsFormViewDataSource" 
+                                       SelectCommand="SELECT ProductId, Name, Description, CategoryId, UnitPrice FROM [Product]" 
+                                       connectionstring="<%$ ConnectionStrings:DBConnectionString %>" 
+                                       runat="server"/>
+                    <div class="col-md-12">
+                         <asp:FormView ID="ProductsFormView" 
+                                  runat="server"
+                                  DataSourceID="ProductsFormViewDataSource"
+                                  AllowPaging="True">
+                            <ItemTemplate>
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Product ID</th>
+                                        <th>Product Name</th>
+                                        <th>Category</th>
+                                        <th>Description</th>
+                                        <th>Unit Price</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <asp:Label id="lblProductId" runat="server" Text='<%# Eval("ProductId") %>' />
+                                            </td>
+                                            <td>
+                                                <asp:Label id="lblProductName" runat="server" Text='<%# Eval("Name") %>' />
+                                            </td>
+                                            <td>
+                                                <asp:Label id="lblCategoryId" runat="server" Text='<%# Eval("CategoryId") %>' />
+                                            </td>
+                                            <td>
+                                                <asp:Label id="lblDescription" runat="server" Text='<%# Eval("Description") %>' />
+                                            </td>
+                                            <td>
+                                                <asp:Label id="lblUnitPrice" runat="server" Text='<%# Eval("UnitPrice") %>' />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>                 
+                            </ItemTemplate>
+                             <PagerTemplate>
+                                 <table>
+                                     <tr>
+                                         <td><asp:LinkButton ID="PrevButton"  CommandName="Page" CommandArgument="Prev"  Text="<"  RunAt="server"/></td>
+                                         <td><asp:LinkButton ID="NextButton"  CommandName="Page" CommandArgument="Next"  Text=">"  RunAt="server"/></td>
+                                     </tr>
+                                 </table>
+                             </PagerTemplate>
+                        </asp:FormView>
+                    </div>
                 </div>
             </div>
         </div>

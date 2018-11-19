@@ -41,8 +41,7 @@
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                                                ConnectionString='<%$ ConnectionStrings:DBConnectionString %>'
-                                               SelectCommand="SELECT * FROM [Product] 
-                                                              ORDER BY [Name]">
+                                               SelectCommand="SELECT * FROM [Product] ORDER BY [Name]">
                             </asp:SqlDataSource>
                         </div>
                     </div>
