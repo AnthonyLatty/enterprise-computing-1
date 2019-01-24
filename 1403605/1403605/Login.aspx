@@ -1,30 +1,30 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="_1403605.Views.Account.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="_1403605.Login" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Login</title>
-    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="../../Content/Main.css" rel="stylesheet" />
-    <script src="../../Scripts/jquery-3.3.1.js"></script>
-    <script src="../../Scripts/bootstrap.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Main.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" id="banner" href="../../Home.aspx">What's New Superstore</a>
+        <a class="navbar-brand" id="banner" href="Home.aspx">What's New Superstore</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="../../Home.aspx">Home</a>
+                    <a class="nav-link" href="Home.aspx">Home</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../Account/Register.aspx">Register</a>
+                    <a class="nav-link" href="Register.aspx">Register</a>
                 </li>
             </ul>
         </div>
@@ -36,20 +36,6 @@
             <p class="lead">
                 <asp:Label ID="lblError" CssClass="text-danger" Font-Bold="True" runat="server" Text=""/>
             </p>
-            <div class="row">
-                <div class="col-6 col-md-4">
-                    <div class="form-group">
-                        <label>Membership Type</label>
-                        <asp:DropDownList ID="MembershipTypeDropDownList" runat="server" 
-                                          CssClass="form-control"
-                                          AppendDataBoundItems="true">  
-                            <asp:ListItem Value="-1">What's your Membership Type</asp:ListItem>  
-                            <asp:ListItem Value="1">Free</asp:ListItem>  
-                            <asp:ListItem Value="2">Premium</asp:ListItem>  
-                        </asp:DropDownList>
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-6 col-md-4">
                     <div class="form-group">

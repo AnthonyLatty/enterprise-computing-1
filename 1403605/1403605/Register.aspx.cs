@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.UI;
 
-namespace _1403605.Views.Account
+namespace _1403605
 {
     public partial class Register : Page
     {
@@ -13,12 +13,12 @@ namespace _1403605.Views.Account
 
         protected void btnFreeMembership_OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Membership/Free/Register.aspx");
+            Response.Redirect("~/Account/Membership/Free/Register.aspx");
         }
 
         protected void btnPremiumMembership_OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Membership/Premium/Register.aspx");
+            Response.Redirect("~/Account/Membership/Premium/Register.aspx");
         }
     }
 }

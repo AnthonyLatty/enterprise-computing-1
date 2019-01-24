@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _1403605.Views.Membership.Free {
+namespace _1403605.Account.Membership.Free {
     
     
-    public partial class Register {
+    public partial class Marketplace {
         
         /// <summary>
         /// form1 control.
@@ -22,15 +22,6 @@ namespace _1403605.Views.Membership.Free {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblResult control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResult;
-        
-        /// <summary>
         /// lblError control.
         /// </summary>
         /// <remarks>
@@ -40,66 +31,57 @@ namespace _1403605.Views.Membership.Free {
         protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// txtUserId control.
+        /// ddlProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserId;
+        protected global::System.Web.UI.WebControls.DropDownList ddlProducts;
         
         /// <summary>
-        /// txtUserName control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserName;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
-        /// UserNameFieldValidator control.
+        /// lblProductName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameFieldValidator;
+        protected global::System.Web.UI.WebControls.Label lblProductName;
         
         /// <summary>
-        /// txtPassword control.
+        /// lblProductDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.Label lblProductDescription;
         
         /// <summary>
-        /// PasswordRequiredFieldValidator control.
+        /// lblUnitPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordRequiredFieldValidator;
+        protected global::System.Web.UI.WebControls.Label lblUnitPrice;
         
         /// <summary>
-        /// ddlMembershipType control.
+        /// btnCheckOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMembershipType;
-        
-        /// <summary>
-        /// btnSaveFreeCustomer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveFreeCustomer;
+        protected global::System.Web.UI.WebControls.Button btnCheckOut;
     }
 }

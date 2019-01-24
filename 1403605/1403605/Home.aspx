@@ -25,10 +25,10 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="Views/Account/Register.aspx">Register</a>
+                    <a class="nav-link" href="Register.aspx">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Views/Account/Login.aspx">Login</a>
+                    <a class="nav-link" href="Login.aspx">Login</a>
                 </li>
             </ul>
         </div>

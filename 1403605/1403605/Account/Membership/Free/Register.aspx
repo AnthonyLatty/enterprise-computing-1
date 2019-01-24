@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="_1403605.Views.Membership.Free.Register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="_1403605.Account.Membership.Free.Register" %>
 
 <!DOCTYPE html>
 
@@ -24,7 +24,7 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../../Account/Login.aspx">Login</a>
+                    <a class="nav-link" href="/Login.aspx">Login</a>
                 </li>
             </ul>
         </div>
@@ -34,18 +34,11 @@
         <div class="container">
             <br />
             <p class="lead">
-                <asp:Label ID="lblResult" CssClass="text-success" Font-Bold="True" runat="server" Text=""/>
+                <asp:Label ID="lblSuccess" CssClass="text-success" Font-Bold="True" runat="server" Text=""/>
             </p>
             <p class="lead">
                 <asp:Label ID="lblError" CssClass="text-danger" Font-Bold="True" runat="server" Text=""/>
             </p>
-            <div class="row">
-                <div class="col-6 col-md-4">
-                    <div class="form-group">
-                        <asp:TextBox CssClass="form-control" ID="txtUserId" Visible="False" runat="server"/>
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-6 col-md-4">
                     <div class="form-group">
@@ -58,20 +51,19 @@
             <div class="row">
                 <div class="col-6 col-md-4">
                     <div class="form-group">
+                        <label>Email</label>
+                        <asp:TextBox CssClass="form-control" ID="txtEmail" runat="server"/>
+                        <asp:RequiredFieldValidator ID="EmailFieldValidator" runat="server" ErrorMessage="Required Field" CssClass="text-danger" ControlToValidate="txtEmail" Display="Dynamic"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-4">
+                    <div class="form-group">
                         <label>Password</label>
                         <asp:TextBox CssClass="form-control" ID="txtPassword" TextMode="Password" runat="server"/>
                         <asp:RequiredFieldValidator ID="PasswordRequiredFieldValidator" runat="server" ErrorMessage="Required Field" ControlToValidate="txtPassword" CssClass="text-danger" Display="Dynamic"/>
                     </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-4">
-                <div class="form-group">
-                    <asp:DropDownList ID="ddlMembershipType" runat="server" 
-                                      CssClass="form-control"
-                                      Visible="False"
-                                      AppendDataBoundItems="true">  
-                        <asp:ListItem Selected="True" Value="1">Free</asp:ListItem>  
-                    </asp:DropDownList>
                 </div>
             </div>
             <div class="row">

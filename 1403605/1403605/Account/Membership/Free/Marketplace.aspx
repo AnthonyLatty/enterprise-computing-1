@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Marketplace.aspx.cs" Inherits="_1403605.Views.Membership.Free.Marketplace" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Marketplace.aspx.cs" Inherits="_1403605.Account.Membership.Free.Marketplace" %>
 
 <!DOCTYPE html>
 
@@ -18,7 +18,7 @@
         </button>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="../../../Home.aspx">Logout</a>
+                <a class="nav-link" href="#">Logout</a>
             </li>
         </ul>
     </nav>

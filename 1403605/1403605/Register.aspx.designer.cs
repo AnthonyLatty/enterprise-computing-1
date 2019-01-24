@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _1403605.Views.Account {
+namespace _1403605 {
     
     
     public partial class Register {

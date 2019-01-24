@@ -3,7 +3,7 @@ using System.Data;
 using System.Web.UI;
 using _1403605.Models;
 
-namespace _1403605.Views.Membership.Free
+namespace _1403605.Account.Membership.Free
 {
     public partial class Marketplace : Page
     {
