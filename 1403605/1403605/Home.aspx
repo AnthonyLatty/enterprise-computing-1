@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="_1403605.Home" %>
+<%@ Import Namespace="Microsoft.AspNet.Identity" %>
 
 <!DOCTYPE html>
 
@@ -24,12 +25,27 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="Register.aspx">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Login.aspx">Login</a>
-                </li>
+                <asp:LoginView ID="HomeLoginView" runat="server">
+                    <AnonymousTemplate>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Register.aspx">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Login.aspx">Login</a>
+                        </li>
+                    </AnonymousTemplate>
+
+                    <LoggedInTemplate>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a runat="server">Hello, <%: Context.User.Identity.GetUserName()  %> !</a>
+                            </li>
+                            <li>
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/Home.aspx" OnLoggingOut="OnLoggingOut" />
+                            </li>
+                        </ul>
+                    </LoggedInTemplate>
+                </asp:LoginView>
             </ul>
         </div>
     </nav>

@@ -138,7 +138,9 @@
     </Content>
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Home.aspx" />
+    <Content Include="Images\amazonBanner.jpg" />
     <Content Include="Images\black_friday_banner.jpg" />
+    <Content Include="Images\fireTv.jpg" />
     <Content Include="Images\free_membership.jpg" />
     <Content Include="Images\home_banner.png" />
     <Content Include="Images\membership-banner.jpg" />

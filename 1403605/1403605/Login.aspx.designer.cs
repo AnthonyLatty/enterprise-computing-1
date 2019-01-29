@@ -49,6 +49,24 @@ namespace _1403605 {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameFieldValidator;
         
         /// <summary>
+        /// txtEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        
+        /// <summary>
+        /// EmailFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator EmailFieldValidator;
+        
+        /// <summary>
         /// txtPassword control.
         /// </summary>
         /// <remarks>

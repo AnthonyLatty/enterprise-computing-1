@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="_1403605.Account.Membership.Free.Register" %>
+<%@ Import Namespace="Microsoft.AspNet.Identity" %>
 
 <!DOCTYPE html>
 
@@ -23,9 +24,26 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/Login.aspx">Login</a>
-                </li>
+                <asp:LoginView ID="RegisterLoginView" runat="server">
+                    <AnonymousTemplate>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a runat="server" class="nav-link" href="~/Account/Membership/Free/Register.aspx">Register</a>
+                            </li>
+                        </ul>
+                    </AnonymousTemplate>
+
+                    <LoggedInTemplate>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a runat="server">Hello, <%: Context.User.Identity.GetUserName()  %> !</a>
+                            </li>
+                            <li>
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/Home.aspx" OnLoggingOut="OnLoggingOut" />
+                            </li>
+                        </ul>
+                    </LoggedInTemplate>
+                </asp:LoginView>
             </ul>
         </div>
     </nav>
@@ -67,10 +85,21 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-6 col-md-4">
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <asp:TextBox CssClass="form-control" ID="txtConfirmPassword" TextMode="Password" runat="server"/>
+                        <asp:RequiredFieldValidator ID="ConfirmPasswordFieldValidator" runat="server" ErrorMessage="Required Field" ControlToValidate="txtConfirmPassword" CssClass="text-danger" Display="Dynamic"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-xs-6 col-md-4">
                     <asp:Button ID="btnSaveFreeCustomer" runat="server" Text="Register" class="btn btn-secondary" OnClick="btnSaveFreeCustomer_OnClick"/>
                 </div>
             </div>
+            <br />
+            <br />
         </div>
     </form>
 </body>

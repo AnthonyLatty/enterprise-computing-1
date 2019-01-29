@@ -13,6 +13,15 @@ namespace _1403605.Account.Membership.Free {
     public partial class Register {
         
         /// <summary>
+        /// RegisterLoginView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginView RegisterLoginView;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -92,6 +101,24 @@ namespace _1403605.Account.Membership.Free {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordRequiredFieldValidator;
+        
+        /// <summary>
+        /// txtConfirmPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
+        
+        /// <summary>
+        /// ConfirmPasswordFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ConfirmPasswordFieldValidator;
         
         /// <summary>
         /// btnSaveFreeCustomer control.
