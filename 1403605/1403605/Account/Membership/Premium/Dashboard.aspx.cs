@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Data;
 using System.Linq;
+using System.Web;
 using System.Web.ModelBinding;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
 using _1403605.Models;
 
-namespace _1403605.Views.Membership.Premium
+namespace _1403605.Account.Membership.Premium
 {
     public partial class Dashboard : Page
     {
@@ -46,9 +47,10 @@ namespace _1403605.Views.Membership.Premium
             lblSuccess.Text = e.AffectedRows > 0 ? "Row Updated Successfully" : "No data updated!";
         }
 
-        protected void btnCheckOut_OnClick(object sender, EventArgs e)
+        // Login view for premium dashboard
+        protected void OnLoggingOut(object sender, LoginCancelEventArgs e)
         {
-            Response.Redirect("https://www.paypal.com/jm/home");
+            Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
     }
 }

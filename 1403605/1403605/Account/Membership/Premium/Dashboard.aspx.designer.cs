@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _1403605.Views.Membership.Premium {
+namespace _1403605.Account.Membership.Premium {
     
     
     public partial class Dashboard {
@@ -20,6 +20,15 @@ namespace _1403605.Views.Membership.Premium {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// DashboardLoginView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginView DashboardLoginView;
         
         /// <summary>
         /// lblError control.

@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="_1403605.Views.Membership.Premium.Dashboard" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="_1403605.Account.Membership.Premium.Dashboard" %>
+<%@ Import Namespace="Microsoft.AspNet.Identity" %>
 
 <!DOCTYPE html>
 
@@ -11,18 +12,31 @@
     <link href="../../../Content/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" id="banner" href="#">What's New Superstore</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="../../../Home.aspx">Logout</a>
-            </li>
-        </ul>
-    </nav>
     <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" id="banner" href="#">What's New Superstore</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav ml-auto">
+                <asp:LoginView ID="DashboardLoginView" runat="server">
+                    <AnonymousTemplate>
+                        <h2>...</h2>
+                    </AnonymousTemplate>
+
+                    <LoggedInTemplate>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a runat="server" class="nav-link">Hello, <%: Context.User.Identity.GetUserName()  %>!   </a>
+                            </li>
+                            <li>
+                                <asp:LoginStatus runat="server" CssClass="nav-link" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/Home.aspx" OnLoggingOut="OnLoggingOut" />
+                            </li>
+                        </ul>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </ul>
+        </nav>
         <div class="jumbotron"></div>
         <div class="container">
             <div class="row">
@@ -166,6 +180,8 @@
                              </PagerTemplate>
                         </asp:FormView>
                     </div>
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>

@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Web.Helpers;
+using System.Web;
 using System.Web.UI;
-using _1403605.Models;
+using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
 
-namespace _1403605.Views.Membership.Premium
+namespace _1403605.Account.Membership.Premium
 {
     public partial class Register : Page
     {
@@ -15,72 +15,51 @@ namespace _1403605.Views.Membership.Premium
 
         }
 
-        //Get connection string to database
-        public string GetConnectionString()
+       
+        // Login view for premium
+        protected void OnLoggingOut(object sender, LoginCancelEventArgs e)
         {
-            return ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
+            Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
-
-
-        private void InsertPremiumCustomer(Customer customer)
-        {
-            using (SqlConnection sqlConnection = new SqlConnection(GetConnectionString()))
-            {
-                string sqlSyntax = @"INSERT INTO Customer   
-                             (UserId, UserName, MembershipType, Password)   
-                              VALUES  
-                             (@UserId, @UserName, @MembershipType, @Password)";
-
-                using (SqlCommand sqlCmd = new SqlCommand(sqlSyntax, sqlConnection))
-                {
-                    sqlCmd.Parameters.AddWithValue("@UserId", customer.CustomerId);
-                    sqlCmd.Parameters.AddWithValue("@UserName", customer.UserName);
-                    sqlCmd.Parameters.AddWithValue("@MembershipType", customer.MembershipType);
-                    sqlCmd.Parameters.AddWithValue("@Password", customer.Password);
-
-                    try
-                    {
-                        sqlConnection.Open();
-                        sqlCmd.CommandType = CommandType.Text;
-                        sqlCmd.ExecuteNonQuery();
-                    }
-                    catch (Exception e)
-                    {
-                        lblError.Text = e.Message;
-                    }
-                    finally
-                    {
-                        sqlConnection.Close();
-                    }
-                }
-            }
-        }
-
 
         protected void btnSavePremiumCustomer_OnClick(object sender, EventArgs e)
         {
             if (IsValid)
             {
-                Random random = new Random();
-
-                Customer customer = new Customer
+                // Create role
+                var roleStore = new RoleStore<IdentityRole>();
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+                if (!roleManager.RoleExists("Premium"))
                 {
-                    CustomerId = random.Next(0, 100),
-                    UserName = txtUserName.Text,
-                    MembershipType = ddlMembershipType.SelectedItem.Text,
-                    Password = Crypto.SHA256(txtPassword.Text)
+                    roleManager.Create(new IdentityRole("Premium"));
+                }
+                // Create user
+                var userStore = new UserStore<IdentityUser>();
+                var userManager = new UserManager<IdentityUser>(userStore);
+                var user = new IdentityUser
+                {
+                    Email = txtEmail.Text,
+                    UserName = txtUserName.Text
                 };
+                // Create user and assign to role
+                var result = userManager.Create(user, txtPassword.Text);
+                if (!userManager.IsInRole(userManager.FindByEmail(user.Email).Id, "Premium"))
+                {
+                    userManager.AddToRole(userManager.FindByEmail(user.Email).Id, "Premium");
+                }
 
-                InsertPremiumCustomer(customer);
-                lblResult.Text = "Registration complete, you can now sign in to your account.";
-                ClearControls();
+                if (result.Succeeded)
+                {
+                    var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+                    var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                    authenticationManager.SignIn(new AuthenticationProperties() { }, userIdentity);
+                    Response.Redirect("~/Account/Membership/Premium/Dashboard.aspx");
+                }
+                else
+                {
+                    lblError.Text = "Error registering, please try again.";
+                }
             }
-        }
-
-        private void ClearControls()
-        {
-            txtPassword.Text = "";
-            txtUserName.Text = "";
         }
     }
 }

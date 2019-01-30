@@ -21,8 +21,6 @@ namespace _1403605.Account.Membership.Free
         {
             if (IsValid)
             {
-                // Default UserStore constructor uses the default connection string named: DefaultConnection
-
                 // Create role
                 var roleStore = new RoleStore<IdentityRole>();
                 var roleManager = new RoleManager<IdentityRole>(roleStore);
@@ -54,7 +52,7 @@ namespace _1403605.Account.Membership.Free
                 }
                 else
                 {
-                    lblError.Text = result.Errors.FirstOrDefault();
+                    lblError.Text = "Error registering, please try again.";
                 }
             }
         }
