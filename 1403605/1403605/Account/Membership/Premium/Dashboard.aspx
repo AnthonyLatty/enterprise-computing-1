@@ -1,4 +1,4 @@
-﻿<%@ Title="Dashboard"  Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Dashboard.aspx.cs" Inherits="_1403605.Account.Membership.Premium.Dashboard" %>
+﻿<%@ Page Title="Dashboard" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Dashboard.aspx.cs" Inherits="_1403605.Account.Membership.Premium.Dashboard" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="jumbotron"></div>

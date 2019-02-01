@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
@@ -55,12 +54,6 @@ namespace _1403605.Account.Membership.Free
                     lblError.Text = "Error registering, please try again.";
                 }
             }
-        }
-
-        // Login View Logout function
-        protected void OnLoggingOut(object sender, LoginCancelEventArgs e)
-        {
-            Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
     }
 }

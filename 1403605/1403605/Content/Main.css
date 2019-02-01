@@ -21,6 +21,10 @@
     border-radius: 0;
 }
 
+.footer {
+    text-align: center;
+}
+
 #banner {
     color: #82d8e3;
 }

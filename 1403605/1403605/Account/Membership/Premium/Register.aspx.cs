@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
@@ -16,12 +15,6 @@ namespace _1403605.Account.Membership.Premium
         }
 
        
-        // Login view for premium
-        protected void OnLoggingOut(object sender, LoginCancelEventArgs e)
-        {
-            Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-        }
-
         protected void btnSavePremiumCustomer_OnClick(object sender, EventArgs e)
         {
             if (IsValid)

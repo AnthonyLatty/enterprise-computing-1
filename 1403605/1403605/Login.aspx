@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="Site.Master" CodeBehind="Login.aspx.cs" Inherits="_1403605.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Async="true" MasterPageFile="Site.Master" CodeBehind="Login.aspx.cs" Inherits="_1403605.Login" %>
 
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
@@ -8,15 +8,6 @@
             <p class="lead">
                 <asp:Label ID="lblError" CssClass="text-danger" Font-Bold="True" runat="server" Text=""/>
             </p>
-            <div class="row">
-                <div class="col-6 col-md-4">
-                    <div class="form-group">
-                        <label>User Name</label>
-                        <asp:TextBox CssClass="form-control" ID="txtUserName" runat="server"/>
-                        <asp:RequiredFieldValidator ID="UserNameFieldValidator" runat="server" ErrorMessage="Required Field" CssClass="text-danger" ControlToValidate="txtUserName" Display="Dynamic"/>
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-6 col-md-4">
                     <div class="form-group">
@@ -41,5 +32,4 @@
                 </div>
             </div>
         </div>
-
 </asp:Content>
