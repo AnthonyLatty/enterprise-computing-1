@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _1403605 {
+namespace _1403605.Views {
     
     
     public partial class Login {

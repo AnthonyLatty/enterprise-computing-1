@@ -1,4 +1,4 @@
-﻿<%@ Page AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="_1403605.Home" Language="C#" MasterPageFile="Site.Master" Title="Home" %>
+﻿<%@ Page AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="_1403605.Views.Home" Language="C#" MasterPageFile="~/Site.Master" Title="Home" %>
 
 
 

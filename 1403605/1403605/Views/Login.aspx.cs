@@ -5,7 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 
-namespace _1403605
+namespace _1403605.Views
 {
     public partial class Login : Page
     {
@@ -21,7 +21,7 @@ namespace _1403605
             {
                 var userStore = new UserStore<IdentityUser>();
                 var userManager = new UserManager<IdentityUser>(userStore);
-                var user = await userManager.FindByEmailAsync(txtEmail.Text);
+                var user = await userManager.FindAsync(txtEmail.Text, txtPassword.Text);
                 if (user != null)
                 {
                     var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
@@ -40,10 +40,14 @@ namespace _1403605
                     {
                         Response.Redirect("~/Account/Membership/Premium/Dashboard.aspx");
                     }
+                    if (userManager.IsInRole(user.Id, "Administrator"))
+                    {
+                        Response.Redirect("~/Account/Admin/Dashboard.aspx");
+                    }
                 }
                 else
                 {
-                    lblError.Text = "Invalid email or password.";
+                    lblError.Text = "Invalid User name or password.";
                 }
             }
         }

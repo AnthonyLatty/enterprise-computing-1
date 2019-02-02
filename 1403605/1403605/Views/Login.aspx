@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Async="true" MasterPageFile="Site.Master" CodeBehind="Login.aspx.cs" Inherits="_1403605.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Async="true" MasterPageFile="~/Site.Master" CodeBehind="Login.aspx.cs" Inherits="_1403605.Views.Login" %>
 
 
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-6 col-md-4">
                     <div class="form-group">
-                        <label>Email Address</label>
+                        <label>User name</label>
                         <asp:TextBox CssClass="form-control" ID="txtEmail" runat="server"/>
                         <asp:RequiredFieldValidator ID="EmailFieldValidator" runat="server" ErrorMessage="Required Field" CssClass="text-danger" ControlToValidate="txtEmail" Display="Dynamic"/>
                     </div>

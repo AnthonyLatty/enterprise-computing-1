@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.UI;
 
-namespace _1403605
+namespace _1403605.Views
 {
     public partial class Register : Page
     {
