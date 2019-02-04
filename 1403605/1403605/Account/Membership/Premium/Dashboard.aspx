@@ -50,14 +50,12 @@
                             </Columns>
                         </asp:GridView>
                     </div>
-                    <h1>Edit our Products</h1>
+                    <h1>Our Products</h1>
                     <asp:SqlDataSource ID="SqlDataSourceConnection" 
                                        runat="server"
                                        DataSourceMode="DataSet"
                                        ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
-                                       SelectCommand="SELECT ProductId, Name, Description FROM Product"
-                                       UpdateCommand="UPDATE Product SET Description = @Description WHERE ProductId = @ProductId"
-                                       OnUpdated="SqlDataSourceConnection_OnUpdated">
+                                       SelectCommand="SELECT ProductId, Name, Description FROM Product">
                     </asp:SqlDataSource> 
                     <div class="col-md-12">
                         <asp:GridView ID="grdCategories" 
@@ -76,11 +74,8 @@
                                 <asp:BoundField DataField="Name" HeaderText="Product Name" ReadOnly="True">
                                     <ItemStyle CssClass="col-xs-2" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="Description" HeaderText="Product Description">
+                                <asp:BoundField DataField="Description" HeaderText="Product Description" ReadOnly="True">
                                 </asp:BoundField>
-                                <asp:CommandField CausesValidation="False" ShowEditButton="True">
-                                    <ItemStyle CssClass="col-xs-2 text-danger" />
-                                </asp:CommandField>
                             </Columns>
                         </asp:GridView>
                         <i>
