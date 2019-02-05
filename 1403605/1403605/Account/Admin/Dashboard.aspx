@@ -88,8 +88,10 @@
                                runat="server"
                                DataSourceMode="DataSet"
                                ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
-                               SelectCommand="SELECT ProductId, Name, Description FROM Product"
-                               UpdateCommand="UPDATE Product SET Description = @Description, Name = @Name WHERE ProductId = @ProductId"                                     OnUpdated="ProductSqlDataSourceConnection_OnUpdated">
+                               SelectCommand="SELECT * FROM Product"
+                               UpdateCommand="UPDATE Product SET Description = @Description, Name = @Name, UnitPrice = @UnitPrice WHERE ProductId = @ProductId"
+                               DeleteCommand="Delete FROM Product where ProductId = @ProductId"
+                               OnUpdated="ProductSqlDataSourceConnection_OnUpdated">
             </asp:SqlDataSource> 
             <asp:GridView ID="grdCategories" 
                           runat="server"
@@ -109,7 +111,9 @@
                     </asp:BoundField>
                     <asp:BoundField DataField="Description" HeaderText="Product Description">
                     </asp:BoundField>
-                    <asp:CommandField CausesValidation="False" ShowEditButton="True">
+                    <asp:BoundField DataField="UnitPrice" HeaderText="Price">
+                    </asp:BoundField>
+                    <asp:CommandField CausesValidation="False" ShowEditButton="True" ShowDeleteButton="True">
                         <ItemStyle CssClass="col-xs-2 text-danger" />
                     </asp:CommandField>
                 </Columns>

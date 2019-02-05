@@ -21,6 +21,10 @@
     border-radius: 0;
 }
 
+#products-container {
+    padding-top: 20px;
+}
+
 .footer {
     text-align: center;
 }

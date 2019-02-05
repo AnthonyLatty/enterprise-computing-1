@@ -151,6 +151,7 @@
       <DependentUpon>1403605.mdf</DependentUpon>
     </Content>
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Views\Contact.aspx" />
     <Content Include="Views\Home.aspx" />
     <Content Include="Images\amazonBanner.jpg" />
     <Content Include="Images\black_friday_banner.jpg" />
@@ -218,6 +219,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Views\Login.aspx" />
+    <Content Include="Views\Products.aspx" />
     <Content Include="Views\Register.aspx" />
     <Content Include="Account\Membership\Free\Register.aspx" />
     <Content Include="Account\Membership\Free\Marketplace.aspx" />
@@ -243,6 +245,13 @@
     </Compile>
     <Compile Include="Account\Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -288,6 +297,13 @@
     </Compile>
     <Compile Include="Views\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
