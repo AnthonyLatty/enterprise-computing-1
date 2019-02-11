@@ -11,7 +11,6 @@
                         <h5 class="card-title">Dell XPS 13</h5>
                         <p class="card-text">Dell flag ship laptop for productivity.</p>
                         <p class="card-text">Price: $100000.00</p>
-                        <a href="../Views/Register.aspx" class="btn btn-primary">Purchase</a>
                     </div>
                 </div>
             </div>
@@ -22,7 +21,6 @@
                         <h5 class="card-title">Dell XPS 15</h5>
                         <p class="card-text">Dell's flag ship laptop for productivity.</p>
                         <p class="card-text">Price: $1500000.00</p>
-                        <a href="../Views/Register.aspx" class="btn btn-primary">Purchase</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +31,6 @@
                         <h5 class="card-title">HP 5000</h5>
                         <p class="card-text">HP's laptop for productivity and gaming.</p>
                         <p class="card-text">Price: $700000.00</p>
-                        <a href="../Views/Register.aspx" class="btn btn-primary">Purchase</a>
                     </div>
                 </div>
             </div>
@@ -48,7 +45,6 @@
                         <h5 class="card-title">Apple imac pro</h5>
                         <p class="card-text">Apple's laptop for productivity for professionals.</p>
                         <p class="card-text">Price: $150000.00</p>
-                        <a href="../Views/Register.aspx" class="btn btn-primary">Purchase</a>
                     </div>
                 </div>
             </div>
@@ -59,7 +55,6 @@
                         <h5 class="card-title">Lenovo</h5>
                         <p class="card-text">Lenovo laptop build for speed with the latest intel hardware for professionals.</p>
                         <p class="card-text">Price: $900000.00</p>
-                        <a href="../Views/Register.aspx" class="btn btn-primary">Purchase</a>
                     </div>
                 </div>
             </div>
@@ -70,7 +65,6 @@
                         <h5 class="card-title">HP 7000</h5>
                         <p class="card-text">HP 7000 for productivity users.</p>
                         <p class="card-text">Price: $700000.00</p>
-                        <a href="../Views/Register.aspx" class="btn btn-primary">Purchase</a>
                     </div>
                 </div>
             </div>
@@ -85,7 +79,6 @@
                         <h5 class="card-title">Dell Workstation</h5>
                         <p class="card-text">Dell's desktop solution.</p>
                         <p class="card-text">Price: $250000.00</p>
-                        <a href="../Views/Register.aspx" class="btn btn-primary">Purchase</a>
                     </div>
                 </div>
             </div>
