@@ -14,7 +14,8 @@
                                runat="server"
                                DataSourceMode="DataSet"
                                ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
-                               SelectCommand="Select * from AspNetUsers"/>
+                               SelectCommand="Select * from AspNetUsers"
+                               DeleteCommand="Delete from AspNetUsers where Id = @Id"/>
             <asp:GridView ID="grdAspUsers" 
                           runat="server"
                           AutoGenerateColumns="False" 
@@ -25,15 +26,18 @@
                           PageSize="5"
                           CssClass="table table-bordered table-hover">
                 <Columns>
+                    <asp:BoundField DataField="ID" HeaderText="User ID" ReadOnly="True">
+                        <ItemStyle CssClass="col-xs-2" />
+                    </asp:BoundField>
                     <asp:BoundField DataField="UserName" HeaderText="User name" ReadOnly="True">
                         <ItemStyle CssClass="col-xs-2" />
                     </asp:BoundField>
                     <asp:BoundField DataField="Email" HeaderText="Email" ReadOnly="True">
                         <ItemStyle CssClass="col-xs-2" />
                     </asp:BoundField>
-                    <%--<asp:CommandField CausesValidation="False" ShowEditButton="False">
+                    <asp:CommandField CausesValidation="False" ShowDeleteButton="True">
                     <ItemStyle CssClass="col-xs-2 text-danger" />
-                </asp:CommandField>--%>
+                </asp:CommandField>
                 </Columns>
             </asp:GridView>
             <i>

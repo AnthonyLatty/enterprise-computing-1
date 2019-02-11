@@ -151,6 +151,11 @@
       <DependentUpon>1403605.mdf</DependentUpon>
     </Content>
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Images\hp_5000.jpg" />
+    <Content Include="Images\imac.jpg" />
+    <Content Include="Images\sale_poster.jpg" />
+    <Content Include="Images\xps_13.jpg" />
+    <Content Include="Images\xps_15.jpg" />
     <Content Include="Views\Contact.aspx" />
     <Content Include="Views\Home.aspx" />
     <Content Include="Images\amazonBanner.jpg" />
@@ -263,7 +268,6 @@
     <Compile Include="Models\Category.cs">
       <DependentUpon>ProductWithCategory.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Product.cs">
       <DependentUpon>ProductWithCategory.tt</DependentUpon>
     </Compile>

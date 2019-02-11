@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace _1403605.Views
 {
-    public partial class Products : System.Web.UI.Page
+    public partial class Products : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
