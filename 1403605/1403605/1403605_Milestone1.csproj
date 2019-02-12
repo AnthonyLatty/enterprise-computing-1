@@ -138,6 +138,7 @@
   <ItemGroup>
     <Content Include="Account\Admin\Dashboard.aspx" />
     <Content Include="Account\Membership\Free\Cart.aspx" />
+    <Content Include="Account\Membership\Premium\PremiumCart.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -229,7 +230,7 @@
     <Content Include="Views\Register.aspx" />
     <Content Include="Account\Membership\Free\Register.aspx" />
     <Content Include="Account\Membership\Free\Marketplace.aspx" />
-    <Content Include="Account\Membership\Premium\Dashboard.aspx" />
+    <Content Include="Account\Membership\Premium\PremiumDashboard.aspx" />
     <Content Include="Account\Membership\Premium\Register.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -258,6 +259,13 @@
     </Compile>
     <Compile Include="Account\Membership\Free\Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Membership\Premium\PremiumCart.aspx.cs">
+      <DependentUpon>PremiumCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Membership\Premium\PremiumCart.aspx.designer.cs">
+      <DependentUpon>PremiumCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\CartItemList.cs" />
@@ -341,12 +349,12 @@
     <Compile Include="Account\Membership\Free\Marketplace.aspx.designer.cs">
       <DependentUpon>Marketplace.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Membership\Premium\Dashboard.aspx.cs">
-      <DependentUpon>Dashboard.aspx</DependentUpon>
+    <Compile Include="Account\Membership\Premium\PremiumDashboard.aspx.cs">
+      <DependentUpon>PremiumDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Membership\Premium\Dashboard.aspx.designer.cs">
-      <DependentUpon>Dashboard.aspx</DependentUpon>
+    <Compile Include="Account\Membership\Premium\PremiumDashboard.aspx.designer.cs">
+      <DependentUpon>PremiumDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Membership\Premium\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

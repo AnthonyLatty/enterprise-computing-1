@@ -38,7 +38,7 @@ namespace _1403605.Views
                     }
                     if (userManager.IsInRole(user.Id, "Premium"))
                     {
-                        Response.Redirect("~/Account/Membership/Premium/Dashboard.aspx");
+                        Response.Redirect("~/Account/Membership/Premium/PremiumDashboard.aspx");
                     }
                     if (userManager.IsInRole(user.Id, "Administrator"))
                     {

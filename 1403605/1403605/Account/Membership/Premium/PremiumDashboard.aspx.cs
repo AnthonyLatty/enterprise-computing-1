@@ -1,21 +1,16 @@
 ﻿using System;
 using System.Data;
-using System.Web;
 using System.Web.UI;
 using _1403605.Models;
 
-namespace _1403605.Account.Membership.Free
+namespace _1403605.Account.Membership.Premium
 {
-    public partial class Marketplace : Page
+    public partial class Dashboard : Page
     {
         private ProductItem _selectedProduct;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Remove cart session on back button pressed
-            Page.Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            Session["Cart"] = null;
-
             //bind drop-down list on first load   
             if (!IsPostBack)
                 ddlProducts.DataBind();
@@ -26,7 +21,9 @@ namespace _1403605.Account.Membership.Free
             lblProductName.Text = _selectedProduct.Name;
             lblProductDescription.Text = _selectedProduct.Description;
             lblUnitPrice.Text = "Price: $" + _selectedProduct.UnitPrice + " each";
+
         }
+
 
         private ProductItem GetSelectedProduct()
         {
@@ -43,7 +40,7 @@ namespace _1403605.Account.Membership.Free
                 ProductId = Convert.ToInt32(row["ProductId"].ToString()).ToString(),
                 Name = row["Name"].ToString(),
                 Description = row["Description"].ToString(),
-                UnitPrice = (decimal) row["UnitPrice"]
+                UnitPrice = (decimal)row["UnitPrice"]
             };
 
             return p;
@@ -68,7 +65,7 @@ namespace _1403605.Account.Membership.Free
                     cartItem.AddQuantity(Convert.ToInt32(txtQuantity.Text));
                 }
 
-                Response.Redirect("Cart.aspx");
+                Response.Redirect("~/Account/Membership/Premium/PremiumCart.aspx");
             }
         }
     }

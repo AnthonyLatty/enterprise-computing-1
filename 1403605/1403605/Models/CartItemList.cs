@@ -12,22 +12,19 @@ namespace _1403605.Models
             _cartItems = new List<CartItem>();
         }
 
-        public int Count
-        {
-            get { return _cartItems.Count; }
-        }
+        public int Count => _cartItems.Count;
 
         public CartItem this[int index]
         {
-            get { return _cartItems[index]; }
-            set { _cartItems[index] = value; }
+            get => _cartItems[index];
+            set => _cartItems[index] = value;
         }
 
         public CartItem this[string id]
         {
             get
             {
-                foreach (CartItem c in _cartItems)
+                foreach (var c in _cartItems)
                     if (c.ProductItem.ProductId == id) return c;
                 return null;
             }
@@ -35,7 +32,7 @@ namespace _1403605.Models
 
         public static CartItemList GetCart()
         {
-            CartItemList cart = (CartItemList)HttpContext.Current.Session["Cart"];
+            var cart = (CartItemList)HttpContext.Current.Session["Cart"];
             if (cart == null)
                 HttpContext.Current.Session["Cart"] = new CartItemList();
             return (CartItemList)HttpContext.Current.Session["Cart"];
@@ -43,7 +40,7 @@ namespace _1403605.Models
 
         public void AddItem(ProductItem product, int quantity)
         {
-            CartItem c = new CartItem(product, quantity);
+            var c = new CartItem(product, quantity);
             _cartItems.Add(c);
         }
 

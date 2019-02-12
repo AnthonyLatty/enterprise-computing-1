@@ -4,8 +4,8 @@
     {
         public CartItem(ProductItem product, int quantity)
         {
-            this.ProductItem = product;
-            this.Quantity = quantity;
+            ProductItem = product;
+            Quantity = quantity;
         }
 
         public ProductItem ProductItem { get; set; }
@@ -14,16 +14,12 @@
 
         public void AddQuantity(int quantity)
         {
-            this.Quantity += quantity;
+            Quantity += quantity;
         }
 
         public string Display()
         {
-            string displayString = string.Format("{0} ({1} at {2})",
-                ProductItem.Name,
-                Quantity.ToString(),
-                ProductItem.UnitPrice.ToString("c")
-            );
+            var displayString = $"{ProductItem.Name} ({Quantity.ToString()} at {ProductItem.UnitPrice:c})";
             return displayString;
         }
     }

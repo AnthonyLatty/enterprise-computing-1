@@ -51,6 +51,7 @@
                                 <li class="nav-link">
                                     <a runat="server" class="nav-link" title="Manage your account feature Coming Soon..">Hello, <%: Context.User.Identity.GetUserName()  %> !</a>
                                 </li>
+                                
                                 <li class="nav-link">
                                     <asp:LoginStatus runat="server" CssClass="nav-link" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/Views/Home.aspx" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>

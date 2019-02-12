@@ -10,78 +10,60 @@
 namespace _1403605.Account.Membership.Premium {
     
     
-    public partial class Dashboard {
+    public partial class PremiumCart {
         
         /// <summary>
-        /// lblError control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-        /// lblSuccess control.
+        /// lstCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSuccess;
+        protected global::System.Web.UI.WebControls.ListBox lstCart;
         
         /// <summary>
-        /// ddlProduct control.
+        /// btnRemove control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlProduct;
+        protected global::System.Web.UI.WebControls.Button btnRemove;
         
         /// <summary>
-        /// grdProducts control.
+        /// btnEmpty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdProducts;
+        protected global::System.Web.UI.WebControls.Button btnEmpty;
         
         /// <summary>
-        /// SqlDataSourceConnection control.
+        /// btnContinue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceConnection;
+        protected global::System.Web.UI.WebControls.Button btnContinue;
         
         /// <summary>
-        /// grdCategories control.
+        /// btnCheckOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdCategories;
-        
-        /// <summary>
-        /// ProductsFormViewDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ProductsFormViewDataSource;
-        
-        /// <summary>
-        /// ProductsFormView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView ProductsFormView;
+        protected global::System.Web.UI.WebControls.Button btnCheckOut;
     }
 }
