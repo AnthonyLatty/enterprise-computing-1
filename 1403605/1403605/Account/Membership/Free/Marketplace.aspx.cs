@@ -7,7 +7,7 @@ namespace _1403605.Account.Membership.Free
 {
     public partial class Marketplace : Page
     {
-        private Product _selectedProduct;
+        private ProductItem _selectedProduct;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,7 +23,7 @@ namespace _1403605.Account.Membership.Free
             lblUnitPrice.Text = "Price: $" + _selectedProduct.UnitPrice + " each";
         }
 
-        private Product GetSelectedProduct()
+        private ProductItem GetSelectedProduct()
         {
             //get row from SqlDataSource based on value in drop-down list
             DataView productsTable = (DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty);
@@ -33,9 +33,9 @@ namespace _1403605.Account.Membership.Free
             DataRowView row = productsTable[0];
 
             //create a new product object and load with data from row
-            Product p = new Product
+            ProductItem p = new ProductItem
             {
-                ProductId = Convert.ToInt32(row["ProductId"].ToString()),
+                ProductId = Convert.ToInt32(row["ProductId"].ToString()).ToString(),
                 Name = row["Name"].ToString(),
                 Description = row["Description"].ToString(),
                 UnitPrice = (decimal) row["UnitPrice"]
@@ -45,9 +45,26 @@ namespace _1403605.Account.Membership.Free
         }
 
 
-        protected void btnCheckOut_OnClick(object sender, EventArgs e)
+        protected void btnAddToCart_OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("https://www.paypal.com/jm/home");
+            if (IsValid)
+            {
+                //get cart from session and selected item from cart
+                Models.CartItemList cart = Models.CartItemList.GetCart();
+                Models.CartItem cartItem = cart[_selectedProduct.ProductId];
+
+                //if item isn’t in cart, add it; otherwise, increase its quantity
+                if (cartItem == null)
+                {
+                    cart.AddItem(_selectedProduct, Convert.ToInt32(txtQuantity.Text));
+                }
+                else
+                {
+                    cartItem.AddQuantity(Convert.ToInt32(txtQuantity.Text));
+                }
+
+                Response.Redirect("Cart.aspx");
+            }
         }
     }
 }

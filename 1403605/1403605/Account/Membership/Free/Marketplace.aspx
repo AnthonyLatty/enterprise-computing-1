@@ -38,7 +38,23 @@
                     <p class="card-text">
                         <asp:Label ID="lblUnitPrice" runat="server"/>
                     </p>
-                    <asp:Button ID="btnCheckOut" runat="server" Text="Check out" OnClick="btnCheckOut_OnClick" CssClass="btn btn-success" />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <asp:Label runat="server" Text="Quantity"/>
+                        </div>
+                        <div class="col-md-8">
+                            <asp:TextBox ID="txtQuantity" runat="server" 
+                                         CssClass="form-control"/>
+                            <asp:RequiredFieldValidator ID="QuantityRequiredField" CssClass="text-danger"
+                                                        runat="server" ControlToValidate="txtQuantity" Display="Dynamic" ErrorMessage="Quantity is a required field."/>
+                            <asp:RangeValidator ID="RangeValidator1" runat="server" CssClass="text-danger" 
+                                                ControlToValidate="txtQuantity" Display="Dynamic" 
+                                                ErrorMessage="Quantity must range from 1 to 500."
+                                                MaximumValue="500" MinimumValue="1" Type="Integer"/>
+                        </div>
+                    </div>
+                    <br />
+                    <asp:Button ID="btnAddToCart" runat="server" Text="Add to cart" OnClick="btnAddToCart_OnClick" CssClass="btn btn-success" />
                 </div>
             </div>
             <br />
