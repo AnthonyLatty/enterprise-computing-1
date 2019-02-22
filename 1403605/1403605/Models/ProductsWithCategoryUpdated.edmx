@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CategoryId" />
@@ -21,6 +21,7 @@
           <Property Name="Description" Type="varchar" MaxLength="50" />
           <Property Name="CategoryId" Type="varchar" MaxLength="30" />
           <Property Name="UnitPrice" Type="money" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="100" />
         </EntityType>
         <Association Name="FK__Product__Categor__47A6A41B">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
@@ -34,7 +35,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ModelStoreContainer">
+        <EntityContainer Name="Model1StoreContainer">
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Product__Categor__47A6A41B" Association="Self.FK__Product__Categor__47A6A41B">
@@ -46,7 +47,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CategoryId" />
@@ -64,6 +65,7 @@
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CategoryId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ImageUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Category" Relationship="Self.FK__Product__Categor__47A6A41B" FromRole="Product" ToRole="Category" />
         </EntityType>
         <Association Name="FK__Product__Categor__47A6A41B">
@@ -78,7 +80,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ProductEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ProductsCategoryEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Products" EntityType="Self.Product" />
           <AssociationSet Name="FK__Product__Categor__47A6A41B" Association="Self.FK__Product__Categor__47A6A41B">
@@ -91,9 +93,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ProductEntities">
+        <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="ProductsCategoryEntities">
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="Model.Category">
+            <EntityTypeMapping TypeName="Model1.Category">
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -101,13 +103,14 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="Model.Product">
+            <EntityTypeMapping TypeName="Model1.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

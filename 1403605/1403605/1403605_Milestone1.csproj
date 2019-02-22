@@ -153,11 +153,33 @@
       <DependentUpon>1403605.mdf</DependentUpon>
     </Content>
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="Images\hp_5000.jpg" />
-    <Content Include="Images\imac.jpg" />
+    <Content Include="Images\Products\blackpoint_tv.jpg" />
+    <Content Include="Images\Products\dell_workstation.jpg" />
+    <Content Include="Images\Products\hp_5000.jpg" />
+    <Content Include="Images\Products\hp_monitor.jpg" />
+    <Content Include="Images\Products\imac.jpg" />
+    <Content Include="Images\Products\iphone_10.jpg" />
+    <Content Include="Images\Products\lenovo.jpg" />
+    <Content Include="Images\Products\ps3.jpg" />
+    <Content Include="Images\Products\ps4.jpeg" />
+    <Content Include="Images\Products\samsung_galaxy.jpg" />
+    <Content Include="Images\Products\samsung_tv.jpg" />
+    <Content Include="Images\Products\sharp_tv.png" />
+    <Content Include="Images\Products\singer_tv.jpg" />
+    <Content Include="Images\Products\xbox_one.jpg" />
     <Content Include="Images\sale_poster.jpg" />
-    <Content Include="Images\xps_13.jpg" />
-    <Content Include="Images\xps_15.jpg" />
+    <Content Include="Images\Products\xps_13.jpg" />
+    <Content Include="Images\Products\xps_15.jpg" />
+    <Content Include="Models\ProductsWithCategoryUpdated.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProductsWithCategoryUpdated.edmx</DependentUpon>
+      <LastGenOutput>ProductsWithCategoryUpdated.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ProductsWithCategoryUpdated.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProductsWithCategoryUpdated.edmx</DependentUpon>
+      <LastGenOutput>ProductsWithCategoryUpdated.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Contact.aspx" />
     <Content Include="Views\Home.aspx" />
     <Content Include="Images\amazonBanner.jpg" />
@@ -167,16 +189,6 @@
     <Content Include="Images\home_banner.png" />
     <Content Include="Images\membership-banner.jpg" />
     <Content Include="Images\wow_deal.jpg" />
-    <Content Include="Models\ProductWithCategory.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductWithCategory.edmx</DependentUpon>
-      <LastGenOutput>ProductWithCategory.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\ProductWithCategory.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductWithCategory.edmx</DependentUpon>
-      <LastGenOutput>ProductWithCategory.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -194,13 +206,6 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
-    <EntityDeploy Include="Models\ProductWithCategory.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProductWithCategory.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ProductWithCategory.edmx.diagram">
-      <DependentUpon>ProductWithCategory.edmx</DependentUpon>
-    </Content>
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
@@ -212,6 +217,13 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Account\Web.config" />
+    <EntityDeploy Include="Models\ProductsWithCategoryUpdated.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProductsWithCategoryUpdated.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ProductsWithCategoryUpdated.edmx.diagram">
+      <DependentUpon>ProductsWithCategoryUpdated.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -269,7 +281,25 @@
     </Compile>
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\CartItemList.cs" />
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>ProductsWithCategoryUpdated.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ProductItem.cs" />
+    <Compile Include="Models\ProductsWithCategoryUpdated.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsWithCategoryUpdated.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductsWithCategoryUpdated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsWithCategoryUpdated.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductsWithCategoryUpdated.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsWithCategoryUpdated.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -285,25 +315,7 @@
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs">
-      <DependentUpon>ProductWithCategory.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Product.cs">
-      <DependentUpon>ProductWithCategory.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductWithCategory.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductWithCategory.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductWithCategory.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductWithCategory.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductWithCategory.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductWithCategory.edmx</DependentUpon>
+      <DependentUpon>ProductsWithCategoryUpdated.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

@@ -26,12 +26,14 @@ namespace _1403605.Account.Membership.Free
             lblProductName.Text = _selectedProduct.Name;
             lblProductDescription.Text = _selectedProduct.Description;
             lblUnitPrice.Text = "Price: $" + _selectedProduct.UnitPrice + " each";
+            imgProduct.ImageUrl = "../../../Images/Products/" + _selectedProduct.ImageUrl;
+
         }
 
         private ProductItem GetSelectedProduct()
         {
             //get row from SqlDataSource based on value in drop-down list
-            DataView productsTable = (DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty);
+            DataView productsTable = (DataView)ProductSqlDataSource.Select(DataSourceSelectArguments.Empty);
 
             productsTable.RowFilter = "ProductId = '" + ddlProducts.SelectedValue + "'";
 
@@ -43,7 +45,8 @@ namespace _1403605.Account.Membership.Free
                 ProductId = Convert.ToInt32(row["ProductId"].ToString()).ToString(),
                 Name = row["Name"].ToString(),
                 Description = row["Description"].ToString(),
-                UnitPrice = (decimal) row["UnitPrice"]
+                UnitPrice = (decimal)row["UnitPrice"],
+                ImageUrl = row["ImageUrl"].ToString()
             };
 
             return p;

@@ -13,10 +13,10 @@ namespace _1403605.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ProductEntities : DbContext
+    public partial class ProductsCategoryEntities : DbContext
     {
-        public ProductEntities()
-            : base("name=ProductEntities")
+        public ProductsCategoryEntities()
+            : base("name=ProductsCategoryEntities")
         {
         }
     

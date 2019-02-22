@@ -31,13 +31,22 @@ namespace _1403605.Account.Membership.Free {
         protected global::System.Web.UI.WebControls.DropDownList ddlProducts;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// ProductSqlDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource ProductSqlDataSource;
+        
+        /// <summary>
+        /// imgProduct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgProduct;
         
         /// <summary>
         /// lblProductName control.

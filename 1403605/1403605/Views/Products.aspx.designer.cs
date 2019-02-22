@@ -11,5 +11,23 @@ namespace _1403605.Views {
     
     
     public partial class Products {
+        
+        /// <summary>
+        /// ProductSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ProductSqlDataSource;
+        
+        /// <summary>
+        /// ProductsRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater ProductsRepeater;
     }
 }
