@@ -10,13 +10,13 @@
                 <ItemTemplate>
                     <div class="col-md-4">
                         <div class="card">
-                            <img src='<%# Eval("ImageUrl") %>' class="card-img-top" />
+                            <img src='/Images/Products/<%# Eval("ImageUrl") %>' class="card-img-top" />
                             <div class="card-body">
-                                <asp:Label ID="lblTitle" CssClass="card-title" runat="server" Text='<%# Eval("Name") %>' />
+                                <asp:Label ID="lblTitle" CssClass="card-title" Font-Bold="true" Font-Size="Large" runat="server" Text='<%# Eval("Name") %>' />
                                 <br />
                                 <asp:Label ID="lblDescription" CssClass="card-text" runat="server" Text='<%# Eval("Description") %>' />
                                 <br />
-                                <asp:Label ID="lblPrice" CssClass="card-text" runat="server" Text='<%# Eval("UnitPrice") %>' />
+                                <asp:Label ID="lblPrice" CssClass="card-text" Font-Size="Medium" ForeColor="Green" runat="server" Text='<%# String.Format("{0:C} JMD", Eval("UnitPrice")) %>' />
                             </div>
                         </div>
                         <br />
