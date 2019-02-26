@@ -13,8 +13,8 @@ namespace _1403605.Account.Membership.Free
         protected void Page_Load(object sender, EventArgs e)
         {
             // Remove cart session on back button pressed
-            Page.Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            Session["Cart"] = null;
+            //Page.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            //Session["Cart"] = null;
 
             //bind drop-down list on first load   
             if (!IsPostBack)
@@ -27,7 +27,6 @@ namespace _1403605.Account.Membership.Free
             lblProductDescription.Text = _selectedProduct.Description;
             lblUnitPrice.Text = "Price: $" + _selectedProduct.UnitPrice + " each";
             imgProduct.ImageUrl = "../../../Images/Products/" + _selectedProduct.ImageUrl;
-
         }
 
         private ProductItem GetSelectedProduct()

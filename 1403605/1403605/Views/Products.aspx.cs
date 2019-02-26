@@ -16,7 +16,6 @@ namespace _1403605.Views
 
             // Handle Application State
             Application["OnlineCustomerCount"] = Convert.ToInt16(Application["OnlineCustomerCount"]) + 1;
-
             lblOnlineCustomers.Text = Application["OnlineCustomerCount"].ToString();
         }
 

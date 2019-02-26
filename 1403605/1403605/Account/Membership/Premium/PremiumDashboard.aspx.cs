@@ -21,7 +21,7 @@ namespace _1403605.Account.Membership.Premium
             lblProductName.Text = _selectedProduct.Name;
             lblProductDescription.Text = _selectedProduct.Description;
             lblUnitPrice.Text = "Price: $" + _selectedProduct.UnitPrice + " each";
-
+            imgProduct.ImageUrl = "../../../Images/Products/" + _selectedProduct.ImageUrl;
         }
 
 
@@ -40,7 +40,8 @@ namespace _1403605.Account.Membership.Premium
                 ProductId = Convert.ToInt32(row["ProductId"].ToString()).ToString(),
                 Name = row["Name"].ToString(),
                 Description = row["Description"].ToString(),
-                UnitPrice = (decimal)row["UnitPrice"]
+                UnitPrice = (decimal)row["UnitPrice"],
+                ImageUrl = row["ImageUrl"].ToString()
             };
 
             return p;
