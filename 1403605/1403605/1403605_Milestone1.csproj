@@ -161,10 +161,10 @@
     <Content Include="Images\Products\iphone_10.jpg" />
     <Content Include="Images\Products\lenovo.jpg" />
     <Content Include="Images\Products\ps3.jpg" />
-    <Content Include="Images\Products\ps4.jpeg" />
+    <Content Include="Images\Products\ps4.jpg" />
     <Content Include="Images\Products\samsung_galaxy.jpg" />
     <Content Include="Images\Products\samsung_tv.jpg" />
-    <Content Include="Images\Products\sharp_tv.png" />
+    <Content Include="Images\Products\sharp_tv.jpg" />
     <Content Include="Images\Products\singer_tv.jpg" />
     <Content Include="Images\Products\xbox_one.jpg" />
     <Content Include="Images\sale_poster.jpg" />

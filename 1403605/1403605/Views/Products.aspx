@@ -10,7 +10,7 @@
                 <ItemTemplate>
                     <div class="col-md-4">
                         <div class="card">
-                            <img src='/Images/Products/<%# Eval("ImageUrl") %>' class="card-img-top" />
+                            <img src='/Images/Products/<%# Eval("ImageUrl") %>' onerror="this.onerror=null;this.src='../Images/sale_poster.jpg';" class="card-img-top" />
                             <div class="card-body">
                                 <asp:Label ID="lblTitle" CssClass="card-title" Font-Bold="true" Font-Size="Large" runat="server" Text='<%# Eval("Name") %>' />
                                 <br />
