@@ -2,8 +2,10 @@
 
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
+    <div class="alert alert-primary" role="alert">
+        Online Users: <asp:Label ID="lblOnlineCustomers" runat="server"/>
+    </div>
     <asp:SqlDataSource ID="ProductSqlDataSource" runat="server" DataSourceMode="DataSet" />
-
     <div class="container" id="products-container">
         <div class="row">
             <asp:Repeater ID="ProductsRepeater" DataSourceID="ProductSqlDataSource" runat="server">

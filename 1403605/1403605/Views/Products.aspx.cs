@@ -13,6 +13,11 @@ namespace _1403605.Views
                 ProductSqlDataSource.ConnectionString = GetConnectionString();
                 ProductSqlDataSource.SelectCommand = "SELECT * FROM PRODUCT";
             }
+
+            // Handle Application State
+            Application["OnlineCustomerCount"] = Convert.ToInt16(Application["OnlineCustomerCount"]) + 1;
+
+            lblOnlineCustomers.Text = Application["OnlineCustomerCount"].ToString();
         }
 
         //Get connection string to database
