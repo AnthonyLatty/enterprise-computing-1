@@ -132,9 +132,13 @@
         <div class="row">
             <div class="col-md-6">
                 <h2>Add Products on Sale</h2>
+                <br />
+                <asp:Label ID="lblResult" Font-Size="Large" CssClass="text-success" runat="server" />
+                <br />
+                <asp:Label ID="lblError" Font-Size="Large" CssClass="text-danger" runat="server" />
                 <div class="form-group">
-                    <label>Sales ID</label>
-                    <asp:TextBox ID="txtSalesID" CssClass="form-control" runat="server" />
+                    <%--<label>Sales ID</label>--%>
+                    <asp:TextBox ID="txtSalesID" Visible="false" CssClass="form-control" runat="server" />
                 </div>
                 <div class="form-group">
                     <label>Product Name</label>
@@ -145,8 +149,8 @@
                     <asp:TextBox ID="txtDescription" CssClass="form-control" runat="server" />
                 </div>
                 <div class="form-group">
-                    <label>Image</label>
-                    <asp:Image ID="imgUrl" CssClass="form-control" runat="server" />
+                    <%--<label>Image</label>--%>
+                    <asp:Image ID="imgUrl" Visible="false" CssClass="form-control" runat="server" />
                 </div>
                 <div class="form-group">
                     <label>Price</label>

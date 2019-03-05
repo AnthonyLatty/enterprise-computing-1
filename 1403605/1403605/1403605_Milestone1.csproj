@@ -300,6 +300,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProductsWithCategoryUpdated.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\SaleProducts.cs" />
     <Compile Include="Views\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
