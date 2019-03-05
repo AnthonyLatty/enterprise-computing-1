@@ -46,6 +46,7 @@ namespace _1403605.Account.Membership.Premium
                     var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
                     var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                     authenticationManager.SignIn(new AuthenticationProperties() { }, userIdentity);
+
                     Response.Redirect("~/Account/Membership/Premium/Dashboard.aspx");
                 }
                 else

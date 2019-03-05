@@ -130,8 +130,29 @@
         <br />
         <br />
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <h2>Add Products on Sale</h2>
+                <div class="form-group">
+                    <label>Sales ID</label>
+                    <asp:TextBox ID="txtSalesID" CssClass="form-control" runat="server" />
+                </div>
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <asp:TextBox ID="txtProductName" CssClass="form-control" runat="server" />
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <asp:TextBox ID="txtDescription" CssClass="form-control" runat="server" />
+                </div>
+                <div class="form-group">
+                    <label>Image</label>
+                    <asp:Image ID="imgUrl" CssClass="form-control" runat="server" />
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <asp:TextBox ID="txtUnitPrice" CssClass="form-control" runat="server" />
+                </div>
+                <asp:Button ID="btnSaveSaleProduct" CssClass="btn btn-primary btn-lg" runat="server" Text="Save" OnClick="btnSaveSaleProduct_Click" />
             </div>
         </div>
     </div>

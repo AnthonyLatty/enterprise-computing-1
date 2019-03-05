@@ -14,7 +14,7 @@ namespace _1403605.Views
 
         }
 
-        
+
         protected async void btnLoginCustomer_OnClick(object sender, EventArgs e)
         {
             if (IsValid)

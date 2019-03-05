@@ -14,6 +14,15 @@ namespace _1403605.Account.Membership.Free
 
             if (!IsPostBack)
                 DisplayCart();
+
+            // Value of feedback TextBox is assigned to ViewState
+            ViewState["feedback"] = txtFeedback.Text;
+
+            // Assign value of ViewState to TextBox
+            if (ViewState["feedback"] != null)
+            {
+                txtFeedback.Text = ViewState["feedback"].ToString();
+            }
         }
 
         private void DisplayCart()

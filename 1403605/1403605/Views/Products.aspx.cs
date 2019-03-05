@@ -24,6 +24,5 @@ namespace _1403605.Views
         {
             return ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
         }
-        
     }
 }
